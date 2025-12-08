@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Security Encryption Lab</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <!-- Header -->
+    <header class="header">
+        <h1>🔐 Security Encryption Lab</h1>
+        <p>Learn and experiment with classical encryption algorithms</p>
+    </header>
+
+    <div class="container">
+        <!-- Algorithm Selection -->
+        <section class="section">
+            <h2 class="section-title">Choose an Algorithm</h2>
+            <div class="algorithm-grid">
+                <div class="algorithm-card" data-algorithm="caesar">
+                    <span class="algorithm-icon">🔤</span>
+                    <h3>Caesar Cipher</h3>
+                    <p>Simple substitution cipher using letter shifting</p>
+                </div>
+                <div class="algorithm-card" data-algorithm="otp">
+                    <span class="algorithm-icon">🔑</span>
+                    <h3>One-Time Pad</h3>
+                    <p>Theoretically unbreakable encryption with random key</p>
+                </div>
+                <div class="algorithm-card" data-algorithm="playfair">
+                    <span class="algorithm-icon">📊</span>
+                    <h3>Playfair Cipher</h3>
+                    <p>Digraph substitution using a 5×5 matrix</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Mode Selection -->
+        <section class="section hidden" id="modeSection">
+            <h2 class="section-title">Choose Mode</h2>
+            <div class="mode-toggle">
+                <button class="mode-btn active" data-mode="encrypt">🔒 Encrypt</button>
+                <button class="mode-btn" data-mode="decrypt">🔓 Decrypt</button>
+            </div>
+        </section>
+
+        <!-- Explanation Section -->
+        <section class="explanation-section hidden" id="explanationSection">
+            <!-- Content will be dynamically populated -->
+        </section>
+
+        <!-- Workspace -->
+        <section class="section hidden" id="workspaceSection">
+            <div class="workspace">
+                <h2 class="section-title">Workspace</h2>
+
+                <!-- Text Input -->
+                <div class="input-group">
+                    <label for="textInput">Enter Your Text</label>
+                    <textarea id="textInput" placeholder="Type your message here..."></textarea>
+                </div>
+
+                <!-- Key Input (Dynamic based on algorithm) -->
+                <div class="input-group" id="keyInputGroup">
+                    <label for="keyInput" id="keyLabel">Enter Key</label>
+                    <div class="key-input-wrapper">
+                        <input type="text" id="keyInput" placeholder="Enter key...">
+                        <button class="btn-generate hidden" id="generateKeyBtn">Generate Key</button>
+                    </div>
+                    <small id="keyHint" style="color: var(--text-muted); margin-top: 0.5rem; display: block;"></small>
+                </div>
+
+                <!-- Action Buttons -->
+                <div class="action-buttons">
+                    <button class="btn-primary" id="executeBtn">Execute</button>
+                </div>
+
+                <!-- Error Message -->
+                <div class="error-message hidden" id="errorMessage"></div>
+            </div>
+        </section>
+
+        <!-- Results Section -->
+        <section class="results-section hidden" id="resultsSection">
+            <h3>Result</h3>
+            <div class="result-output" id="resultOutput">
+                <button class="copy-btn" id="copyBtn">📋 Copy</button>
+                <div id="resultText"></div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Scripts -->
+    <script src="algorithms.js"></script>
+    <script src="explanations.js"></script>
+    <script src="app.js"></script>
+</body>
+
+</html>
