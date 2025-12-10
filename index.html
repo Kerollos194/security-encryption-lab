@@ -4,102 +4,131 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Security Encryption Lab</title>
+    <title>Cipher Master - Chase Game</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="video-thumbnail.css">
+    <link rel="stylesheet" href="home-page.css">
 </head>
 
 <body>
-    <!-- Header -->
-    <header class="header">
-        <h1>🔐 Security Encryption Lab</h1>
-        <p>Learn and experiment with classical encryption algorithms</p>
-    </header>
+    <!-- Home Page -->
+    <section class="home-page" id="homePage">
+        <div class="container">
+            <h1 class="main-title">Catch the algorithm</h1>
+        </div>
 
-    <div class="container">
-        <!-- Algorithm Selection -->
-        <section class="section">
-            <h2 class="section-title">Choose an Algorithm</h2>
-            <div class="algorithm-grid">
-                <div class="algorithm-card" data-algorithm="caesar">
-                    <span class="algorithm-icon">🔤</span>
-                    <h3>Caesar Cipher</h3>
-                    <p>Simple substitution cipher using letter shifting</p>
-                </div>
-                <div class="algorithm-card" data-algorithm="otp">
-                    <span class="algorithm-icon">🔑</span>
-                    <h3>One-Time Pad</h3>
-                    <p>Theoretically unbreakable encryption with random key</p>
-                </div>
-                <div class="algorithm-card" data-algorithm="playfair">
-                    <span class="algorithm-icon">📊</span>
-                    <h3>Playfair Cipher</h3>
-                    <p>Digraph substitution using a 5×5 matrix</p>
-                </div>
+        <div class="algorithm-grid">
+            <div class="algorithm-card" data-algorithm="playfair">
+                <span class="card-name">Playfair</span>
             </div>
-        </section>
 
-        <!-- Mode Selection -->
-        <section class="section hidden" id="modeSection">
-            <h2 class="section-title">Choose Mode</h2>
-            <div class="mode-toggle">
-                <button class="mode-btn active" data-mode="encrypt">🔒 Encrypt</button>
-                <button class="mode-btn" data-mode="decrypt">🔓 Decrypt</button>
+            <div class="algorithm-card" data-algorithm="railfence">
+                <span class="card-name">Rail Fence</span>
             </div>
-        </section>
 
-        <!-- Explanation Section -->
-        <section class="explanation-section hidden" id="explanationSection">
-            <!-- Content will be dynamically populated -->
-        </section>
+            <div class="algorithm-card" data-algorithm="monoalphabetic">
+                <span class="card-name">Monoalphabetic</span>
+            </div>
 
-        <!-- Workspace -->
-        <section class="section hidden" id="workspaceSection">
-            <div class="workspace">
-                <h2 class="section-title">Workspace</h2>
+            <div class="algorithm-card" data-algorithm="polyalphabetic">
+                <span class="card-name">Vigenère</span>
+            </div>
 
-                <!-- Text Input -->
-                <div class="input-group">
-                    <label for="textInput">Enter Your Text</label>
-                    <textarea id="textInput" placeholder="Type your message here..."></textarea>
-                </div>
+            <div class="algorithm-card" data-algorithm="hill">
+                <span class="card-name">Hill</span>
+            </div>
 
-                <!-- Key Input (Dynamic based on algorithm) -->
-                <div class="input-group" id="keyInputGroup">
-                    <label for="keyInput" id="keyLabel">Enter Key</label>
-                    <div class="key-input-wrapper">
-                        <input type="text" id="keyInput" placeholder="Enter key...">
-                        <button class="btn-generate hidden" id="generateKeyBtn">Generate Key</button>
+            <div class="algorithm-card" data-algorithm="otp">
+                <span class="card-name">One-Time Pad</span>
+            </div>
+
+            <div class="algorithm-card" data-algorithm="caesar">
+                <span class="card-name">Caesar</span>
+            </div>
+
+            <div class="algorithm-card" data-algorithm="rowcolumn">
+                <span class="card-name">Row Column</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Algorithm Page -->
+    <section class="algorithm-page hidden" id="algorithmPage">
+        <button class="back-btn" id="backBtn">← Back to Home</button>
+
+        <div class="container">
+
+            <!-- Video & Explanation Section -->
+            <section class="cipher-info-section hidden" id="cipherInfoSection">
+                <!-- Video Section First -->
+                <div class="video-section">
+                    <h3 class="video-title">📺 Video Explanation</h3>
+                    <div class="video-container" id="videoContainer">
+                        <img id="videoThumbnail" class="video-thumbnail" src="" alt="Video Thumbnail"
+                            style="display: none;">
+                        <div class="video-play-button" id="playButton" style="display: none;"></div>
+                        <iframe id="videoIframe" width="100%" height="100%" src="" frameborder="0"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                            allowfullscreen>
+                        </iframe>
                     </div>
-                    <small id="keyHint" style="color: var(--text-muted); margin-top: 0.5rem; display: block;"></small>
                 </div>
 
-                <!-- Action Buttons -->
-                <div class="action-buttons">
-                    <button class="btn-primary" id="executeBtn">Execute</button>
+                <!-- Explanation Section Second -->
+                <div class="explanation-section" id="explanationSection">
+                    <!-- Content will be dynamically populated -->
+                </div>
+            </section>
+
+            <!-- Mode Selection -->
+            <section class="section hidden" id="modeSection">
+                <h3>Choose Mode</h3>
+                <div class="mode-toggle">
+                    <button class="mode-btn active" data-mode="encrypt">🔒 Encrypt</button>
+                    <button class="mode-btn" data-mode="decrypt">🔓 Decrypt</button>
+                </div>
+            </section>
+
+            <!-- Workspace -->
+            <section class="section hidden" id="workspaceSection">
+                <h3>Workspace</h3>
+                <div class="input-group">
+                    <label for="textInput">Enter Text:</label>
+                    <textarea id="textInput" rows="4" placeholder="Type your message here..."></textarea>
                 </div>
 
-                <!-- Error Message -->
+                <div class="input-group">
+                    <label for="keyInput" id="keyLabel">Enter Key:</label>
+                    <input type="text" id="keyInput" placeholder="Enter key">
+                    <small id="keyHint" class="hint"></small>
+                    <button id="generateKeyBtn" class="generate-key-btn hidden">Generate Random Key</button>
+                </div>
+
+                <button id="executeBtn" class="btn-primary execute-btn">Execute</button>
+
                 <div class="error-message hidden" id="errorMessage"></div>
-            </div>
-        </section>
+            </section>
 
-        <!-- Results Section -->
-        <section class="results-section hidden" id="resultsSection">
-            <h3>Result</h3>
-            <div class="result-output" id="resultOutput">
-                <button class="copy-btn" id="copyBtn">📋 Copy</button>
-                <div id="resultText"></div>
-            </div>
-        </section>
-    </div>
+            <!-- Results Section -->
+            <section class="results-section hidden" id="resultsSection">
+                <h3>Result</h3>
+                <div class="result-output" id="resultOutput">
+                    <button class="copy-btn" id="copyBtn">📋 Copy</button>
+                    <div id="resultText"></div>
+                </div>
+            </section>
+        </div>
+    </section>
 
     <!-- Scripts -->
+    <script src="nav-scroll.js"></script>
     <script src="algorithms.js"></script>
     <script src="explanations.js"></script>
     <script src="app.js"></script>
+    <script src="card-chase.js"></script>
 </body>
 
 </html>
