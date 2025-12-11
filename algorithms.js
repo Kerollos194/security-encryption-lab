@@ -38,8 +38,15 @@ function otpGenerateKey(length) {
      const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789!@#$%^&*()_+-=[]{}|;:,.<>?';
      let key = '';
 
+     // Array to store real random values
+     const randomValues = new Uint32Array(length);
+
+     // Generate secure random numbers from the system
+     window.crypto.getRandomValues(randomValues);
+
      for (let i = 0; i < length; i++) {
-          const randomIndex = Math.floor(Math.random() * characters.length);
+          // Use the real random values
+          const randomIndex = randomValues[i] % characters.length;
           key += characters[randomIndex];
      }
 
