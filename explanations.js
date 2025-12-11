@@ -43,7 +43,7 @@ const algorithmExplanations = {
 
     railfence: {
         name: "Rail Fence Cipher",
-        videoUrl: "https://www.youtube.com/embed/srlpq49LhYo",
+        videoUrl: "https://www.youtube.com/embed/knE4G8DGLoY",
         description: "The Rail Fence Cipher is a transposition cipher that rearranges the plaintext by writing it in a zigzag pattern across multiple 'rails' (rows), then reading off each rail sequentially.",
 
         howItWorks: [
@@ -80,7 +80,7 @@ const algorithmExplanations = {
 
     monoalphabetic: {
         name: "Monoalphabetic Cipher",
-        videoUrl: "https://www.youtube.com/embed/2WRIVxOJYhM",
+        videoUrl: "https://www.youtube.com/embed/J-utjSeUq_c",
         description: "A Monoalphabetic Cipher is a substitution cipher where each letter in the plaintext is replaced with exactly one corresponding letter from a shuffled alphabet.",
 
         howItWorks: [
@@ -117,7 +117,7 @@ const algorithmExplanations = {
 
     polyalphabetic: {
         name: "Polyalphabetic Cipher (Vigenère)",
-        videoUrl: "https://www.youtube.com/embed/LaWp_Kq0cKs",
+        videoUrl: "https://www.youtube.com/embed/Ic4BzVggNY8",
         description: "The Vigenère Cipher uses multiple Caesar ciphers based on a repeating keyword. Each letter of the keyword determines a different shift value, making it more secure than simple substitution.",
 
         howItWorks: [
@@ -155,7 +155,7 @@ const algorithmExplanations = {
 
     hill: {
         name: "Hill Cipher",
-        videoUrl: "https://www.youtube.com/embed/kfmNeskzs2o",
+        videoUrl: "https://www.youtube.com/embed/-EQ8UomTrAQ",
         description: "The Hill Cipher uses linear algebra and matrix multiplication to encrypt blocks of letters. It's based on matrix transformations in modular arithmetic (mod 26).",
 
         howItWorks: [
@@ -195,6 +195,7 @@ const algorithmExplanations = {
     otp: {
         name: "One-Time Pad (OTP)",
         videoUrl: "https://www.youtube.com/embed/FlIG3TvQCBQ",
+        //https://www.youtube.com/embed/FlIG3TvQCBQ
         description: "The One-Time Pad is the only theoretically unbreakable encryption method when used correctly. It uses a random key that is as long as the message and is never reused.",
 
         howItWorks: [
@@ -266,7 +267,7 @@ const algorithmExplanations = {
 
     rowcolumn: {
         name: "Row Column Transposition",
-        videoUrl: "https://www.youtube.com/embed/srlpq49LhYo",
+        videoUrl: "https://www.youtube.com/embed/cPQXaYUMOjQ",
         description: "Row Column Transposition is a cipher that rearranges the plaintext by writing it into a grid row by row, then reading it out column by column in a specific order determined by a keyword.",
 
         howItWorks: [
